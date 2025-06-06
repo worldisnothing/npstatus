@@ -6,7 +6,7 @@ import time
 from datetime import datetime, timedelta
 
 # Конфигурация
-API_TOKEN = 'BLABLABLABLABLABLABLABLABLABL'
+API_TOKEN = 'TG_BOT_TOKEN' # Напишите в телеге @BotFather для создания бота
 CHECK_INTERVAL = 300  # Проверять каждые 5 минут (в секундах)
 
 bot = telebot.TeleBot(API_TOKEN)
@@ -68,7 +68,7 @@ def get_release_status(auth_token):
 # Авторизация
 def authenticate():
     url = "https://api.raveon.net/auth/user/get/token"
-    form_data = {"email": "HAHAHAHAHAHAHAHAHAHAHAH", "password": "AHAHAHAHAHAHAHAHAHAH"}
+    form_data = {"email": "RAVEON_EMAIL", "password": "RAVEON_PASSWORD"}
     response = requests.post(url, data=form_data)
     if response.status_code == 201:
         return response.json()['data']['serialized_session']['token']
